@@ -1,5 +1,5 @@
 module.exports = {
-    FeedController: require("./feedController"),
+    FeedDomain: require("./feedDomain"),
     AssignDomain: require("./assignDomain"),
     RelationController: require("./relationController"),
     UserDomain: require("./userDomain")

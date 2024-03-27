@@ -1,5 +1,5 @@
 module.exports = {
-    FeedController: require("./feedController"),
+    FeedServices: require("./feedServices"),
     AssignServices: require("./assignServices"),
     RelationController: require("./relationController"),
     UserServices: require("./userServices")

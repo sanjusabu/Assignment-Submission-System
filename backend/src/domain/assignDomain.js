@@ -1,5 +1,5 @@
 const fileUpload = require("../utils/fileUpload");
-
+const db = require("../config/database");
 exports.InsertAssignment = async (ass_id, id, description,title,publishDate,deadlineDate,file) =>{
     const insertJournal = `INSERT INTO Assignment_details(Aid,title,description,status, publish_date,created_by,deadline_Date,file)
     VALUES (?, ?, ?,?, ?, ?, ?)`;
@@ -44,5 +44,13 @@ exports.AssignStudents = async (ass_id,students)=> {
     }
     catch(error){
         throw new Error(error)
+    }
+}
+exports.DeleteAssignment = async(ass_id)=>{
+    try{
+        const deleteAssignment = `Delete from Assignment_details where AID = ?`
+        await db.execute(deleteAssignment, [ass_id])
+    } catch(error){
+        throw new Error('Error in Deleting Assignemnt')
     }
 }

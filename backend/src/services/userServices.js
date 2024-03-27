@@ -4,8 +4,12 @@ const jwt = require("jsonwebtoken");
 const UserSignup = async (password, email, type) => {
     let store_type = 1;
     if (type === 'Teacher') {
+        store_type = 1;
+    } else if (type == 'Student'){
         store_type = 0;
-    } 
+    } else {
+        return res.status(500).json({"error": "Valid Params are 'Student' and 'Teacher'"})
+    }
     if (password.length < 6) {
         throw new Error("Password Length Should be greater than 5 Characters");
     }
