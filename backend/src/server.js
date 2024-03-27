@@ -3,15 +3,17 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require('path');
+
 require("dotenv").config()
-// const routes = require("./routes")
+const routes = require("./routes")
+
 const db = require("./config/database")
 
 app.use(express.static(__dirname + "/public"));
 app.use(cors());
 
 app.use(bodyParser.json());
-// app.use("/api", routes);
+app.use("/api/v1", routes);
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
