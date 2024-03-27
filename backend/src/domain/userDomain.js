@@ -9,12 +9,12 @@ const InsertUsers = async (store_type, email, hashedPassword) =>{
 }
 const Checklogin = async(email, hashedPassword) => {
     try{
-        userexists = await db.execute("SELECT * FROM User WHERE email = ? and password = ?", [email, hashedPassword]);
+        userexists = await db.execute("SELECT * FROM Users WHERE email = ? and password = ?", [email, hashedPassword]);
         existingUser =  userexists[0][0];
         if(!existingUser){
             throw new Error("Invalid credentials, could not log you in.")
         }
-        // return {user : existingUser}
+        return existingUser.UID
     } catch(error){
         throw new Error(error)
     }

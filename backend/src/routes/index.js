@@ -1,7 +1,7 @@
 const express = require("express");
 
 const FeedRoutes= require("./feed")
-const JournalRoutes= require("./journal")
+const JournalRoutes= require("./assignment")
 const UserRoutes= require("./user")
 
 const router = express.Router();

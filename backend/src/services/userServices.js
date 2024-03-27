@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const {UserDomain} = require("../domain")
+const jwt = require("jsonwebtoken");
 const UserSignup = async (password, email, type) => {
     let store_type = 1;
     if (type === 'Teacher') {
@@ -20,11 +21,13 @@ const UserSignup = async (password, email, type) => {
 const UserLogin = async (email,password)=> {
     try{
       const hashedPassword = await bcrypt.hash(password, 10);
-      existingUser = UserDomain.Checklogin(email, hashedPassword)
+      existingUserID = UserDomain.Checklogin(email, hashedPassword)
     //   const pass = await bcrypt.compare(password, existingUser.password);
     //   if (!pass) {
     //     throw new Error("Wrong Password, Try Again");
     //   }
+    let token = jwt.sign({id: existingUser.UID},process.env.JWT_SECRET,{ expiresIn: "20m" });
+    return token
     } catch (error) {
         throw new Error(error);
     }

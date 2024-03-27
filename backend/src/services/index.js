@@ -1,6 +1,6 @@
 module.exports = {
     FeedController: require("./feedController"),
-    JournalController: require("./journalController"),
+    AssignServices: require("./assignServices"),
     RelationController: require("./relationController"),
     UserServices: require("./userServices")
 }
