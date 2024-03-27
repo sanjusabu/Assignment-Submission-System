@@ -15,11 +15,3 @@ app.use(bodyParser.json());
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
 });
-
-db.execute('SELECT 1')
-  .then(([rows, fields]) => {
-    console.log('Database connection successful');
-  })
-  .catch(err => {
-    console.error('Error connecting to database:', err);
-  });
