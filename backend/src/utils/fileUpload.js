@@ -15,8 +15,8 @@ const Uploadfile = async (id,file)=>{
 
     }
     catch(err){
-        console.log(err);
-        return res.json({"error": "Cloudinary error"});
+        // console.log(err);
+        throw new Error("Cloudinary error : ", err)
     }
 
     return result;

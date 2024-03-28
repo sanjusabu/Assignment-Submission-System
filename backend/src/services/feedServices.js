@@ -7,6 +7,8 @@ exports.FeedDetails = async (user_id,publish,status)=> {
         return result
     } else {
         //
+        const result = await FeedDomain.GetStudentFeed(user_id,status)
+        return result
     }
     } catch (error) {
            throw new Error(error);

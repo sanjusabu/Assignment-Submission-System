@@ -1,6 +1,6 @@
 module.exports = {
     FeedServices: require("./feedServices"),
     AssignServices: require("./assignServices"),
-    RelationController: require("./relationController"),
+    SubmissionServices: require("./submissionServices"),
     UserServices: require("./userServices")
 }

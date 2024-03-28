@@ -1,6 +1,6 @@
 module.exports = {
     FeedController: require("./feedController"),
     AssignController: require("./AssignController"),
-    RelationController: require("./relationController"),
+    SubmissionController: require("./SubmissionController"),
     UserController: require("./userController")
 }
