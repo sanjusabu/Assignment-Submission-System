@@ -1,8 +1,8 @@
 const { FeedDomain } = require("../domain");
 
-exports.FeedDetails = async (user_id,publish,status)=> {
+exports.FeedDetails = async (user_type, user_id,publish,status)=> {
     try {        
-    if(user == 1){
+    if(user_type == 1){
         const result = await FeedDomain.GetTeacherFeed(user_id,publish)
         return result
     } else {
@@ -11,6 +11,6 @@ exports.FeedDetails = async (user_id,publish,status)=> {
         return result
     }
     } catch (error) {
-           throw new Error(error);
+           throw new Error(error.message);
     }
 }

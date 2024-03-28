@@ -23,9 +23,9 @@ exports.GetStudentSubs =  async(user_id, ass_id)=> {
 }
 exports.InsertAssignment = async (ass_id, id, description,title,publishDate,deadlineDate,file) =>{
     const insertJournal = `INSERT INTO Assignment_details(Aid,title,description,status, publish_date,created_by,deadline_Date,file)
-    VALUES (?, ?, ?,?, ?, ?, ?)`;
-    const status = 'ONGOING'
-    if (publishDate != ''){
+    VALUES (?, ?, ?,?, ?, ?, ?, ?)`;
+    let status = 'ONGOING'
+    if (publishDate != ''){ //check for today
         status = 'SCHEDULED'
     }
     try
@@ -55,8 +55,10 @@ exports.TeacherExists = async (id) => {
 }
 exports.AssignStudents = async (ass_id,students)=> {
     let str = ''
-    for (let student of students){
-        str += `(${ass_id}, ${student})`
+    // let studentsArray = Array.from(students);
+    for (let i=0; i< students.length; i++){
+        if(i != 0) str += `,`
+        str += `('${ass_id}', ${students[i]})`
     }
     try{
         let insertAssignmentsAssigned = `INSERT INTO Assigned(Aid,SID) VALUES ${str}`

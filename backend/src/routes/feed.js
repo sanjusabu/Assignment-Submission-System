@@ -5,6 +5,6 @@ const { FeedController } = require("../controllers")
 
 const { Authmiddleware } = require("../middleware")
 
-router.get("/feed",Authmiddleware,FeedController.FeedDetails);
+router.get("/feedDetails",Authmiddleware,FeedController.FeedDetails);
 
 module.exports = router;

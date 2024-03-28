@@ -1,4 +1,4 @@
 module.exports = {
     Authmiddleware: require("./check-auth"),
-    Multer: require("./multer"),
+    Upload: require("./multer"),
 }
