@@ -104,7 +104,7 @@ http
     Headers:  token - Authenticates the user through the token
     Updates the Assignment by the assignmentId and other details that need to be updated.
 
-    ![alt text](image-5.png)
+![alt text](image-5.png)
 
 #### Delete an Assignment  - Protected
 
