@@ -94,7 +94,7 @@ http
     File is optional and the list of student_ids that are allowed have also been checked, errors have been handled. 
     File is uploaded to cloudinary and then is stored as alink in the Assignment_Details Database.
 
-    ![alt text](image-4.png)
+![alt text](image-4.png)
 
 #### Update Existing Assignment - Protected
 
