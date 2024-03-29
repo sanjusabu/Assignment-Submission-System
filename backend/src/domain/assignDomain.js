@@ -105,7 +105,7 @@ exports.AssignStudents = async (ass_id,students)=> {
 }
 exports.DeleteAssignment = async(ass_id)=>{
     try{
-        const deleteAssignment = `Delete from Assignment_details where Aid = ?`
+        const deleteAssignment = `Delete from Assignment_Details where Aid = ?`
         await db.execute(deleteAssignment, [ass_id])
     } catch(error){
         throw new Error(`Error in Deleting Assignment ${error.message}`)

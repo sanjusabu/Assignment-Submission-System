@@ -45,7 +45,7 @@ exports.UpdateAssignment = async (req, res) => {
     publishDate = publishDate || "";
     deadlineDate = deadlineDate || "";
 
-    if(user_type == 0) return res.status(500).json({error: "Only a Tutor can create the assignment!!"})
+    if(user_type == 0) return res.status(500).json({error: "Only a Tutor can update the assignment!!"})
     try{
         message = await AssignServices.UpdateAssignment(assignmentId,title,description,publishDate,deadlineDate)
         return res.status(200).json({"message": "Assignment Updated Successfully"})
@@ -55,6 +55,8 @@ exports.UpdateAssignment = async (req, res) => {
 }
 exports.DeleteAssignment = async (req,res) => {
     let assignmentid  = req.query.assignmentid
+    let user_type = req.type
+    if(user_type == 0) return res.status(500).json({error: "Only a Tutor can delete the assignment!!"})
     try{
         await AssignServices.DeleteAssignment(assignmentid)
         return res.status(200).json({"message": "Assignment Deleted Successfully"})
