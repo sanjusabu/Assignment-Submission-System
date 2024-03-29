@@ -3,11 +3,18 @@ require("dotenv").config();
 
 exports.signup = async (req, res) => {
     let { password, email, phone} = req.body;
-    console.log(password)
     const type = req.query.type
-    if(phone == undefined) phone = ''
+    phone = phone || ""
+    let store_type 
+    if (type === 'Tutor') {
+      store_type = 1;
+    } else if (type == 'Student'){
+        store_type = 0;
+    } else {
+      return res.status(500).json({ error: "Valid Params are 'Student' and 'Tutor'" });
+    }
     try {
-      const result = await UserServices.UserSignup(password, email, type,phone);
+      const result = await UserServices.UserSignup(password, email, store_type,phone);
       return res.status(200).json({ message: result.message });
   } catch (error) {
       return res.status(500).json({ error: error.message });

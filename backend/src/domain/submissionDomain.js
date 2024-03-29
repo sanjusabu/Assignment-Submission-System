@@ -17,7 +17,7 @@ exports.InsertSubmission = async (ass_id,user_id,file)=> {
         if(file == null || file == '') {
             throw new Error("Submission is empty")
         }
-        let updateSubmission = `update Assigned set status = ?, file = ? where AID = ? and SID = ?`
+        let updateSubmission = `update Assigned set status = ?, file = ? where Aid = ? and Sid = ?`
         const result = await fileUpload.Uploadfile(ass_id,file);
         await db.execute(updateSubmission,['SUBMITTED',result.secure_url,ass_id, user_id]);
         return 

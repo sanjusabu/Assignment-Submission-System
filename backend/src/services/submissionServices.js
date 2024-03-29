@@ -4,7 +4,7 @@ exports.CreateSubmission = async(ass_id,user_id,file) => {
         // await SubmissionDomain.StudentExists(user_id)// check if student
         await SubmissionDomain.InsertSubmission(ass_id,user_id,file)// create submission for student
     }catch(error){
-        throw new Error(error.message);
+        throw new Error(error);
     }
 }
 

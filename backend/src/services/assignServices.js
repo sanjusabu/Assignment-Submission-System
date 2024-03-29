@@ -22,9 +22,18 @@ exports.CreateAssignment = async (ass_id,id,title, description,publishDate,deadl
             throw new Error('Please Enter the Students to be assigned');
         }
     } catch (error) {
-           throw new Error(error.message);
+           throw new Error(error);
     }
 }
+
+exports.UpdateAssignment = async (AssignmentId,title,description,publishDate,deadlineDate) => {
+    try {
+        await AssignDomain.UpdateAssignment(AssignmentId,title,description,publishDate,deadlineDate)
+    } catch (error) {
+           throw new Error(error);
+    }
+}
+
 exports.DeleteAssignment = async (ass_id)=> {
     try {
        await AssignDomain.DeleteAssignment(ass_id)

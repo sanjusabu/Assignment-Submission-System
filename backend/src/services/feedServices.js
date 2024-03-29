@@ -11,6 +11,15 @@ exports.FeedDetails = async (user_type, user_id,publish,status)=> {
         return result
     }
     } catch (error) {
-           throw new Error(error.message);
+           throw new Error(error);
+    }
+}
+
+exports.StudentList = async ()=> {
+    try {        
+        const result = await FeedDomain.GetStudents()
+        return result
+    } catch (error) {
+           throw new Error(error);
     }
 }

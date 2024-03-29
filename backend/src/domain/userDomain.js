@@ -4,7 +4,7 @@ exports.InsertUsers = async (store_type, email, hashedPassword,phone) =>{
         await db.execute(`INSERT INTO Users(user_type,email,password,phone) VALUES (?, ?, ?,?)`, [store_type, email, hashedPassword,phone]);
         return
     } catch(error){
-        throw new Error(error.message)
+        throw new Error(error)
     }
 }
 exports.Checklogin = async(email) => {
@@ -17,6 +17,6 @@ exports.Checklogin = async(email) => {
         existingUser =  userexists[0][0];  
         return existingUser
     } catch(error){
-        throw new Error(error.message)
+        throw new Error(error)
     }
 }
