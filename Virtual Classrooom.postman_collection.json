@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "9c54a0be-070a-416a-a7e0-6a6915b15508",
+		"name": "Virtual Classrooom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20367204"
+	},
+	"item": [
+		{
+			"name": "User Authentication",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sanjusab090@gmail.com\",\r\n    \"password\":\"sanjusabu\",\r\n    \"phone\":9876543210\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/users/signup?type=Student",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"signup"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "Student"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"sanjusabghdfhdf@gmail.com\",\r\n    \"password\":\"sanjusabu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/users/login",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assignment Details",
+			"item": [
+				{
+					"name": "Create Assignment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzExNjgzOTAzLCJleHAiOjE3MTE2ODU0MDN9.3iHgl9mRn07f_R-DtyG96q023IC9n2pW3FZC5Nr7vYo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Machine Learning",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Runtime Environment",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "publishDate",
+									"value": "",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "deadlineDate",
+									"value": "2024-04-01",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "student_ids",
+									"value": "[6,7,8,9]",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/C:/Users/sanju/Pictures/Screenshots/m4.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/assignments/createAssignment",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"createAssignment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assignment Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzExNjg0MDI4LCJleHAiOjE3MTE2ODU1Mjh9.23-x9CPsFnLuCXikqb7pxMkGZNc6M8UsRcIBci4vUWI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/assignments//getAssignmentDetails?assignmentId=c29f47ef-68de-4889-9ba1-c9ecf6631a7d",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"",
+								"getAssignmentDetails"
+							],
+							"query": [
+								{
+									"key": "assignmentId",
+									"value": "c29f47ef-68de-4889-9ba1-c9ecf6631a7d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Assignment",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzExNjg0MDI4LCJleHAiOjE3MTE2ODU1Mjh9.23-x9CPsFnLuCXikqb7pxMkGZNc6M8UsRcIBci4vUWI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"assignmentId\":\"f6ea3953-a777-49a1-8187-11ef4c8da517\",\r\n    \"title\": \"Update Assignment\",\r\n    \"description\":\"Hello guys\",\r\n    \"publishDate\": \"2024-03-31\",\r\n    \"deadlineDate\": \"2024-03-28\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/assignments/updateAssignment",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"updateAssignment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Assignment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzExNjg0MDI4LCJleHAiOjE3MTE2ODU1Mjh9.23-x9CPsFnLuCXikqb7pxMkGZNc6M8UsRcIBci4vUWI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/assignments/deleteAssignment?assignmentid=2d75d992-4362-452d-bb0b-14126ac751c0",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"assignments",
+								"deleteAssignment"
+							],
+							"query": [
+								{
+									"key": "assignmentid",
+									"value": "2d75d992-4362-452d-bb0b-14126ac751c0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Assignment Submission",
+			"item": [
+				{
+					"name": "Submit Assignment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzExNjg0MDI4LCJleHAiOjE3MTE2ODU1Mjh9.23-x9CPsFnLuCXikqb7pxMkGZNc6M8UsRcIBci4vUWI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "assignmentId",
+									"value": "f6ea3953-a777-49a1-8187-11ef4c8da517",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/C:/Users/sanju/Pictures/Screenshots/d2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/submissions/addSubmission",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"submissions",
+								"addSubmission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feed",
+			"item": [
+				{
+					"name": "Get Tutor/Student Feed",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNzExNjg0MDI4LCJleHAiOjE3MTE2ODU1Mjh9.23-x9CPsFnLuCXikqb7pxMkGZNc6M8UsRcIBci4vUWI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/feed/feedDetails?publishedAt=SCHEDULED&status=SUBMITTED",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"feed",
+								"feedDetails"
+							],
+							"query": [
+								{
+									"key": "publishedAt",
+									"value": "SCHEDULED"
+								},
+								{
+									"key": "status",
+									"value": "SUBMITTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Students List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzExNjgyNDY5LCJleHAiOjE3MTE2ODM5Njl9.3wdOY19RIFLvinrmfjXJ-nmdT-GWeJpWUvruQxpZmvE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://assignment-submission-system.onrender.com/api/v1/feed/studentlist",
+							"protocol": "https",
+							"host": [
+								"assignment-submission-system",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"feed",
+								"studentlist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
