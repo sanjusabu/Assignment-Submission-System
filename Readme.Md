@@ -68,8 +68,8 @@ http
 
     Query Params: publishedAt(ONGOING/SCHEDULED) and status(ALL/PENDING/SUBMITTED/OVERDUE)
     Gets all the assignments published for that student and the assignments created by the tutor
+    Fetch the feed for the user which is logged in. Detects the role of the user by Auth Token and presents the feed accordingly.
 
-Fetch the feed for the user which is logged in. Detects the role of the user by Auth Token and presents the feed accordingly.
 ![alt text](image-2.png)
 
 http
@@ -77,8 +77,7 @@ http
 
     Headers: token
     Gets all the list of all students
-
-Fetch the feed for the user which is logged in. Detects the role of the user by Auth Token and presents the feed accordingly.
+    Fetch the feed for the user which is logged in. Detects the role of the user by Auth Token and presents the feed accordingly.
 
 ![alt text](image-3.png)
 
